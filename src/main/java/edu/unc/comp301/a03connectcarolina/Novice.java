@@ -3,7 +3,7 @@ package edu.unc.comp301.a03connectcarolina;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Apprentice {
+public class Novice {
 
     private static final Map<String, Double> GRADE_MAP = new HashMap<>();
     static {
