@@ -10,15 +10,15 @@ windows, wrestled with mysteriously vanishing classes, and stared blankly at err
 ConnectCarolina has tested your patience, your sanity, and your GPA, but no more.
 
 **In this assignment, your mission is to build a *better* ConnectCarolina that doesn’t crash when a course is
-full, doesn’t silently fail your registration when prerequisites aren’t met, and actually tells users *what went wrong*.
+full, doesn’t silently fail your registration when prerequisites aren’t met, and actually tells users *what went wrong*.**
 
-Through the creation of dummy methods that are very similar to the core functionality of the website, you'll use exceptions to ensure that these method work like they're supposed to!
+Through the creation of dummy methods that are very similar to the core functionality of the website, you'll use exceptions to ensure that these methods work like they're supposed to!
 
 ---
 
 ## 🟢 Novice
 
-In this first part, you will start off with a simple methods that will handle calculating GPA:
+In this first part, you will start off with a simple method that will handle calculating GPA:
 
 ### calculateGPA
 
@@ -116,13 +116,13 @@ As part of the class you're about to implement next, you will now create another
 ### calculateValidDay
 
 
-_Ever try to add a class and it's already full? Maybe the system is giving people earlier registration days than it should!This helper method will help calculate the valid day of the week that a student with a certain amount of credits should get to register for classes._
+_Ever try to add a class and it's already full? Maybe the system is giving people earlier registration days than it should! This helper method will help calculate the valid day of the week that a student with a certain amount of credits should get to register for classes._
 
 - Write a new method that has one parameter for the number of credits (We need to support half credits as well), and output a string of a day of the week.
 - This is a *utility* method which means, it's going to be static.
 
     - If credits are between 0 and 55 (both inclusive), student's registration day should be Wednesday
-    - If the credits are between 55 and (inclusive) 100, student's registration day should be Tuesday
+    - If the credits are more than 55 and up to (inclusive) 100, student's registration day should be Tuesday
     - If the student has more than 100 credits, they get the first day - Monday!
     - Otherwise, this means that the input was invalid and throw an IllegalArgumentException
 
@@ -154,7 +154,7 @@ Now, you will create a method that will help the system start a short no authent
 ConnectCarolina on their registration day. You will simulate what Duo should do: recognize that if a student logs in on their assigned Registration Day, require no further authentication by starting a 10-minute window representation by a boolean variable.
 -- The idea is that if this boolean is true, the window is active, and vice versa.
 
-- duoAuthenticate will take 2 parameters - one for the 9-digit student ID and one for the day the student is logging in on
+- duoAuthenticate will take 2 parameters - one for the `Student` and one for the day the student is logging in on
     - It will return the true/false value that we talked about above
     - This method will use calculateValidDay() that we implemented earlier; You can get the number of credits that a student has by using student.getCredits();
 - Create a variable that will store the authentication true/false value. Remember that the idea is that if this value is true, that means the 10 minute no authentication window is open.
@@ -171,12 +171,12 @@ ConnectCarolina on their registration day. You will simulate what Duo should do:
 
 Finally, we are ready to put all the pieces together.  You will see the difference between calling static methods and non-static methods.
 
-In `AuthenticatorSimulator`, write a main method that does the following:
+In `AuthenticatorSimulation`, write a main method that does the following:
 - Create a student.  Give it whatever name you want, and an ID, and give them 0 credits.
-- Create an enchanter object.
+- Create an `Adept` object.
 - Have your student scan an event for "Leadership Summit".
 - Ensure that the output shows that the leadership summit was successful.
-- Next, creat a list of students, add your freshman to it, and use it to initialize the student enrollment in sorcerer.
+- Next, create a list of students, add your freshman to it, and use it to initialize the student enrollment in `Jedi`.
 - Create a boolean that represents the authentication window;
 - in a try/catch block, authenticate your student on the proper day.  If there are any errors, catch it and print out the error.  
 - Finally, print out "Thank you for visiting ConnectCarolina".  If it was successful, print "You are authenticated for the next 10 minutes", otherwise, "You will have to authenticate again".

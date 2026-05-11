@@ -1,4 +1,4 @@
-package edu.unc.comp301.a03connectcarolina;
+package edu.unc.comp301.connectcarolina;
 
 import java.util.ArrayList;
 import java.util.List;

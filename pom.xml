@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.comp301.a03connectcarolina</groupId>
+    <groupId>edu.unc.comp301</groupId>
     <artifactId>ConnectCarolina</artifactId>
     <version>1.0-SNAPSHOT</version>
 
