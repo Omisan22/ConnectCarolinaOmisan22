@@ -5,5 +5,5 @@ public class Main {
     System.out.println("Assignment 03 - Connect Carolina");
     String[] grades = {"A", "B"};
     System.out.println(Novice.calculateGPA(2, grades));
-    }
+  }
 }
