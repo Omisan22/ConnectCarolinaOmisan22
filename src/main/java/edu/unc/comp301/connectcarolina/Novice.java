@@ -62,7 +62,7 @@ public class Novice {
     double grade;
     for (int i = 0; i < grades.length; i++) {
       grade = charToGrade(grades[i]);
-      if (grade < 0) throw new IllegalArgumentException("undefined grade");
+      if (grade < 0) throw new IllegalArgumentException("invalid grade");
       cgpa += grade;
     }
     cgpa = cgpa / numOfClasses;
