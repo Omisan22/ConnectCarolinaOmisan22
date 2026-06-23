@@ -3,11 +3,6 @@ package edu.unc.comp301.connectcarolina;
 import java.util.HashMap;
 import java.util.Map;
 
-// Exceptions
-//        CLEAlreadyScannedException
-// This exception will be in the same folder as the rest of the files.
-// create a custom Exception called CLEAlreadyScannedException()
-// Give it a default error message of your choice, but also design it to accept custom messages.
 // CLEEventNotFoundException
 // Repeat the steps above to create another custom exception with one difference: this one should
 // only take in a custom message and have no default.
