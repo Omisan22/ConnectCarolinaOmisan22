@@ -55,7 +55,7 @@ public class Novice {
     }
     if (grades.length != numOfClasses) {
       throw new IllegalArgumentException(
-          "number of elements in the grades array does not match (mismatches) the number of classes");
+          "number of elements in the grades mismatches the number of classes");
     }
     double cgpa = 0.0;
     double grade;
