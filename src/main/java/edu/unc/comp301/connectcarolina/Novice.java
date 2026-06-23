@@ -22,9 +22,8 @@ public class Novice {
   }
 
   //  Create a static method called calculateGPA that inputs the number of classes a student is
-  // taking and an array of
-  //  grades (Strings represented as "A", "A-" ... "D","F") for each class and returns a sentence
-  // that includes the
+  // taking and an array of grades (Strings represented as "A", "A-" ... "D","F") for
+  // each class and returns a sentence that includes the
   //  student's total GPA (more info in a moment)
   //  check out the range of official gradepoints at https://registrar.unc.edu/your-grades/
   //  First, check if the number of classes are invalid (must be positive), and that the number of
@@ -56,7 +55,7 @@ public class Novice {
     }
     if (grades.length != numOfClasses) {
       throw new IllegalArgumentException(
-          "number of elements in the grades array does not match the number of classes");
+          "number of elements in the grades array does not match (mismatches) the number of classes");
     }
     double cgpa = 0.0;
     double grade;
