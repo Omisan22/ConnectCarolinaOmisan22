@@ -74,6 +74,6 @@ public class Adept {
     }
     System.out.println("Thank you for attending!");
     scannedEvents.add(eventName);
-    System.out.println("CLE credit processed for: "+ eventName);
+    System.out.println("CLE credit processed for: " + eventName);
   }
 }
