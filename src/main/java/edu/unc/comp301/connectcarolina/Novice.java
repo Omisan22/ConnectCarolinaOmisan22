@@ -28,8 +28,7 @@ public class Novice {
   //  student's total GPA (more info in a moment)
   //  check out the range of official gradepoints at https://registrar.unc.edu/your-grades/
   //  First, check if the number of classes are invalid (must be positive), and that the number of
-  // elements in the grades
-  //  array matches the number of classes
+  // elements in the grades array matches the number of classes
   //  If these tests fail, throw an IllegalArgumentException with an appropriate output
   //  Then, we'll calculate the GPA
   //  You'll use the given helper method charToGrade() to convert these letter grades into doubles
@@ -59,7 +58,15 @@ public class Novice {
       throw new IllegalArgumentException(
           "number of elements in the grades array does not match the number of classes");
     }
-    return ("Your calculated GPA is: [calculated GPA]");
+    double cgpa = 0.0;
+    double grade;
+    for (int i = 0; i < grades.length; i++) {
+      grade = charToGrade(grades[i]);
+      if (grade < 0) throw new IllegalArgumentException("undefined grade");
+      cgpa += grade;
+    }
+    cgpa = cgpa / numOfClasses;
+    return ("Your calculated GPA is: " + cgpa);
   }
 
   public static double charToGrade(String grade) {
