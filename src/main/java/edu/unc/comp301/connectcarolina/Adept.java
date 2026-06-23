@@ -70,7 +70,7 @@ public class Adept {
     try {
       validateScan(eventName, scannedEvents);
     } catch (Exception e) {
-      System.out.println("Error scanning event:" + e);
+      System.out.println("Error scanning event:" + e.getMessage());
     }
     System.out.println("Thank you for attending!");
     scannedEvents.add(eventName);
