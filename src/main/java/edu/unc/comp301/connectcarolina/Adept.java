@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Adept {
-  //  private Map<String, String> cleEvents = new HashMap<>();
-  //  private List<String> scannedEvents = new ArrayList<>() {};
-  Map<String, String> cleEvents = new HashMap<>();
-  List<String> scannedEvents = new ArrayList<>() {};
+    private Map<String, String> cleEvents = new HashMap<>();
+    private List<String> scannedEvents = new ArrayList<>() {};
+//  Map<String, String> cleEvents = new HashMap<>();
+//  List<String> scannedEvents = new ArrayList<>() {};
 
   public Adept() {
     initCalendar();
