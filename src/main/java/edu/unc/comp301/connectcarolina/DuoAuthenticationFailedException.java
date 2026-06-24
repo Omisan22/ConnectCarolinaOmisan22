@@ -6,6 +6,7 @@ package edu.unc.comp301.connectcarolina;
 
 public class DuoAuthenticationFailedException extends Exception {
   public DuoAuthenticationFailedException(String message) {
-    super(message);
+//    String m2 = "Authentication failed: " + message;
+    super("Authentication failed: " + message);
   }
 }
