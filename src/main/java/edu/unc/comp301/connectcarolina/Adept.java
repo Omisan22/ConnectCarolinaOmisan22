@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Adept {
-  private Map<String, String> cleEvents = new HashMap<>();
-  private List<String> scannedEvents = new ArrayList<>() {};
+//  private Map<String, String> cleEvents = new HashMap<>();
+//  private List<String> scannedEvents = new ArrayList<>() {};
+    Map<String, String> cleEvents = new HashMap<>();
+    List<String> scannedEvents = new ArrayList<>() {};
 
   public Adept() {
     initCalendar();
@@ -41,7 +43,7 @@ public class Adept {
   //  If both of these checks are passed, fantastic! The scan has been validated.
 
   public void validateScan(String eventName, List<String> scannedEvents) throws Exception {
-    if (!cleEvents.containsKey(eventName)) {
+    if (!cleEvents.containsValue(eventName)) {
       throw new CLEEventNotFoundException("event not found");
     }
     if (scannedEvents.contains(eventName)) {
