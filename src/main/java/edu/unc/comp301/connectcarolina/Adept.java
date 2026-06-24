@@ -43,7 +43,8 @@ public class Adept {
   //  If it is you'll use the given exception CLEAlreadyScannedException!
   //  If both of these checks are passed, fantastic! The scan has been validated.
 
-  public void validateScan(String eventName, List<String> scannedEvents) throws Exception {
+  public void validateScan(String eventName, List<String> scannedEvents)
+      throws CLEEventNotFoundException, CLEAlreadyScannedException {
     if (!cleEvents.containsValue(eventName)) {
       throw new CLEEventNotFoundException("event not found");
     }
