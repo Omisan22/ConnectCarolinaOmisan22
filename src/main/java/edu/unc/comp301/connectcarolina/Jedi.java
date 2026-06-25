@@ -129,7 +129,7 @@ public class Jedi {
       if ((id < MINID) || (id > MAXID))
         throw new DuoAuthenticationFailedException(
             "invalid student id for student: " + student.getName());
-      if (day == calculateValidDay(student.getCredits())) {
+      if (day.equals(calculateValidDay(student.getCredits()))) {
         Set<Student> studentsSet = enrollment.get(day);
         if (!studentsSet.contains(student)) {
           throw new DuoAuthenticationFailedException(
