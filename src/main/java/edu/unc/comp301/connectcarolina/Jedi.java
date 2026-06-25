@@ -1,9 +1,6 @@
 package edu.unc.comp301.connectcarolina;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Jedi {
 
@@ -30,7 +27,8 @@ public class Jedi {
         if (s == null) throw new IllegalArgumentException("null student");
         day = calculateValidDay(s.getCredits());
         studentsSet = enrollment.get(day);
-        if (studentsSet == null) throw new IllegalArgumentException("null student set");
+        //        if (studentsSet == null) throw new IllegalArgumentException("null student set");
+        if (studentsSet == null) studentsSet = new HashSet<>();
         studentsSet.add(s);
         enrollment.put(day, studentsSet);
       } catch (IllegalArgumentException e) {
