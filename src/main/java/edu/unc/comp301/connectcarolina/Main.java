@@ -8,9 +8,14 @@ public class Main {
     System.out.println(Novice.calculateGPA(2, grades));
 
     Adept adept = new Adept();
+
     //    System.out.println(adept.cleEvents.containsKey("Fall FDOC"));
     //    System.out.println(adept.cleEvents.containsKey("August 18"));
     //    System.out.println(adept.cleEvents.containsValue("Fall FDOC"));
     //    System.out.println(adept.cleEvents.containsValue("August 18"));
+
+    Student s1 = new Student("John", 100000001, 2);
+    //  Jedi jedi = new Jedi();
+    Jedi.initStudents(null);
   }
 }
