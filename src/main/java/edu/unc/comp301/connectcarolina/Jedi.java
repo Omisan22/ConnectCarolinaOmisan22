@@ -45,6 +45,7 @@ public class Jedi {
   //  The key will be the day of the week (e.g., "Monday", "Tuesday").
   //  The value will be a data collection set of Student containing all students assigned to that
   // day.
+
   private static Map<String, Set<Student>> enrollment = new HashMap<>();
 
   //  Create a new method called initStudents() that takes in a List<Student> and returns nothing.
@@ -70,8 +71,10 @@ public class Jedi {
     Set<Student> studentsSet;
     for (Student s : studentsList) {
       try {
+        if (s == null) throw new IllegalArgumentException("null student");
         day = calculateValidDay(s.getCredits());
         studentsSet = enrollment.get(day);
+        if (studentsSet == null) throw new IllegalArgumentException("null student set");
         studentsSet.add(s);
         enrollment.put(day, studentsSet);
       } catch (IllegalArgumentException e) {
