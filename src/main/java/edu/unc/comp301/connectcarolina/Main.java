@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws DuoAuthenticationFailedException {
     //    System.out.println("Assignment 03 - Connect Carolina");
     String[] grades = {"A", "B"};
     //    String[] grades = {null};
@@ -18,11 +18,12 @@ public class Main {
     //    System.out.println(adept.cleEvents.containsValue("August 18"));
 
     //    Student s1 = new Student("John", 100000001, 2);
-    Student s1 = new Student("John", 1000000011, 2);
+    Student s1 = new Student("John", 100000001, 2);
     List<Student> studentList = new ArrayList<>();
     studentList.add(s1);
     //  Jedi jedi = new Jedi();
-    //    Jedi.initStudents(null);
+    //      Jedi.initStudents(null);
     Jedi.initStudents(studentList);
+    System.out.println(Jedi.duoAuthenticate(s1, "Wednesday"));
   }
 }

@@ -37,7 +37,7 @@ public class Jedi {
     }
   }
 
-  public boolean duoAuthenticate(Student student, String day)
+  public static boolean duoAuthenticate(Student student, String day)
       throws DuoAuthenticationFailedException {
     final int MINID = 100000000;
     final int MAXID = 999999999;
@@ -58,6 +58,7 @@ public class Jedi {
       System.out.println("Duo authentication successful! Welcome, " + student.getName());
       return true;
     } catch (DuoAuthenticationFailedException e) {
+      System.out.println(e.getMessage());
       return false;
     }
   }
