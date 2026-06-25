@@ -42,7 +42,8 @@ public class Jedi {
     final int MINID = 100000000;
     final int MAXID = 999999999;
     int id = student.getStudentID();
-    try {
+//    boolean returnValue = false;
+//    try {
       if (student == null) throw new DuoAuthenticationFailedException("student is null");
       if ((id < MINID) || (id > MAXID))
         throw new DuoAuthenticationFailedException("invalid student id for student: ");
@@ -57,9 +58,9 @@ public class Jedi {
 
       System.out.println("Duo authentication successful! Welcome, " + student.getName());
       return true;
-    } catch (DuoAuthenticationFailedException e) {
-      System.out.println(e.getMessage());
-      return false;
-    }
+//    } catch (DuoAuthenticationFailedException e) {
+//      System.out.println(e.getMessage());
+//      return false;
+//    }
   }
 }
