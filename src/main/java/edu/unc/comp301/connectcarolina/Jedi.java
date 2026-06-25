@@ -79,4 +79,68 @@ public class Jedi {
       }
     }
   }
+
+  //  duoAuthenticate
+  //  Have you ever been tired of authenticating duo everytime you open ConnectCarolina? Especially
+  // on registration days,
+  //  when you don't want to miss those precious seconds to a stupid notification on your phone
+  // asking you if you're
+  //  logging in to your computer? I'm just trying to make sure I get those gen-eds fulfilled :/
+  //
+  //  Now, you will create a method that will help the system start a short no authentication window
+  // when a student opens
+  //  ConnectCarolina on their registration day. You will simulate what Duo should do: recognize
+  // that if a student logs
+  //  in on their assigned Registration Day, require no further authentication by starting a
+  // 10-minute window representation
+  //  by a boolean variable. -- The idea is that if this boolean is true, the window is active, and
+  // vice versa.
+  //
+  //  duoAuthenticate will take 2 parameters - one for the Student and one for the day the student
+  // is logging in on
+  //  It will return the true/false value that we talked about above
+  //  This method will use calculateValidDay() that we implemented earlier; You can get the number
+  // of credits that a
+  //  student has by using student.getCredits();
+  //  Create a variable that will store the authentication true/false value. Remember that the idea
+  // is that if this value
+  //  is true, that means the 10 minute no authentication window is open.
+  //  Grab the students ID from the student passed in.
+  //          First, validate that the student ID is valid (is 9 digits)
+  //  If not, throw the DuoAuthenticationFailedException that you just made with an appropriate
+  // message
+
+  //  Check to see if the current day is the student's registration day.
+
+  //  If it is, validate that the student is actually in the list of students allowed to register
+  // today.
+
+  //  If either of these is not true, throw a DuoAuthenticationFailedException with an appropriate
+  // message.
+  //  Once the student has been validated, print "Duo authentication successful! Welcome, Bob.",
+  // using the student's name
+  //  in the message. Once finished, remember to return your boolean value!
+  public boolean duoAuthenticate(Student student, String day)
+      throws DuoAuthenticationFailedException {
+    final int MINID = 100000000;
+    final int MAXID = 999999999;
+    int id = student.getStudentID();
+    try {
+      if ((id < MINID) || (id > MAXID))
+        throw new DuoAuthenticationFailedException(
+            "invalid student id for student: " + student.getName());
+      if (day == calculateValidDay(student.getCredits())) {
+        Set<Student> studentsSet = enrollment.get(day);
+        if (!studentsSet.contains(student)) {
+          throw new DuoAuthenticationFailedException(
+              "student is not in the list of allowed students");
+        }
+      } else throw new DuoAuthenticationFailedException("student is not allowed to register today");
+
+      System.out.println("Duo authentication successful! Welcome, " + student.getName());
+      return true;
+    } catch (DuoAuthenticationFailedException e) {
+      return false;
+    }
+  }
 }
