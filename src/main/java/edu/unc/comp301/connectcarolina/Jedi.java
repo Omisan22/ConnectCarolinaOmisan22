@@ -42,25 +42,25 @@ public class Jedi {
     final int MINID = 100000000;
     final int MAXID = 999999999;
     int id = student.getStudentID();
-//    boolean returnValue = false;
-//    try {
-      if (student == null) throw new DuoAuthenticationFailedException("student is null");
-      if ((id < MINID) || (id > MAXID))
-        throw new DuoAuthenticationFailedException("invalid student id for student: ");
-      //            "invalid student id for student: " + student.getName());
-      if (day.equals(calculateValidDay(student.getCredits()))) {
-        Set<Student> studentsSet = enrollment.get(day);
-        if (!studentsSet.contains(student)) {
-          throw new DuoAuthenticationFailedException(
-              "student is not in the list of allowed students");
-        }
-      } else throw new DuoAuthenticationFailedException("student is not allowed to register today");
+    //    boolean returnValue = false;
+    //    try {
+    if (student == null) throw new DuoAuthenticationFailedException("student is null");
+    if ((id < MINID) || (id > MAXID))
+      throw new DuoAuthenticationFailedException("invalid student id for student: ");
+    //            "invalid student id for student: " + student.getName());
+    if (day.equals(calculateValidDay(student.getCredits()))) {
+      Set<Student> studentsSet = enrollment.get(day);
+      if (!studentsSet.contains(student)) {
+        throw new DuoAuthenticationFailedException(
+            "student is not in the list of allowed students");
+      }
+    } else throw new DuoAuthenticationFailedException("student is not allowed to register today");
 
-      System.out.println("Duo authentication successful! Welcome, " + student.getName());
-      return true;
-//    } catch (DuoAuthenticationFailedException e) {
-//      System.out.println(e.getMessage());
-//      return false;
-//    }
+    System.out.println("Duo authentication successful! Welcome, " + student.getName());
+    return true;
+    //    } catch (DuoAuthenticationFailedException e) {
+    //      System.out.println(e.getMessage());
+    //      return false;
+    //    }
   }
 }
