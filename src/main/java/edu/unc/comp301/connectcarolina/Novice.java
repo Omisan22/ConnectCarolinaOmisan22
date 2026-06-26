@@ -50,6 +50,7 @@ public class Novice {
   //    D = 1.0
   //    F = 0.0
   public static String calculateGPA(int numOfClasses, String[] grades) {
+    if (grades == null) throw new IllegalArgumentException("grades is null");
     if (numOfClasses <= 0) {
       throw new IllegalArgumentException("Number of classes is 0 (negative response)");
     }
