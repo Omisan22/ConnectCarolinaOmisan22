@@ -17,7 +17,7 @@ public class AuthenticatorSimulation {
     adept.validateScan("Leadership Summit", scannedEvents);
     List<Student> studentList = new ArrayList<>();
     studentList.add(s1);
-    studentList.add(null);
+    //    studentList.add(null);
     Jedi.initStudents(studentList);
     System.out.println("Thank you for visiting ConnectCarolina");
     if (Jedi.duoAuthenticate(s1, "Wednesday")) {
