@@ -32,7 +32,8 @@ public class Jedi {
         studentsSet.add(s);
         enrollment.put(day, studentsSet);
       } catch (IllegalArgumentException e) {
-        System.out.println("Student: " + s.getName() + " credits weren’t valid");
+        System.out.println("Student: credits weren’t valid");
+        //        System.out.println("Student: " + s.getName() + " credits weren’t valid");
       }
     }
   }
