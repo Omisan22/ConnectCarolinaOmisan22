@@ -24,7 +24,7 @@ public class Jedi {
     if (studentsList == null) throw new IllegalArgumentException("students list is null");
     for (Student s : studentsList) {
       try {
-        if (s == null) throw new IllegalArgumentException("null student");
+        if (s == null) throw new NullPointerException("null student");
         day = calculateValidDay(s.getCredits());
         studentsSet = enrollment.get(day);
         //        if (studentsSet == null) throw new IllegalArgumentException("null student set");
