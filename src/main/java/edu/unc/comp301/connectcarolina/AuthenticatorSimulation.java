@@ -38,6 +38,7 @@ public class AuthenticatorSimulation {
       System.out.println("You are authenticated for the next 10 minutes");
       scannedEvents.add("Leadership Summit");
       s1.setCLEEvents(scannedEvents);
+      adept.getCLECredits("Leadership Summit", s1.getScannedCLEEvents());
     } else {
       System.out.println("You will have to authenticate again");
     }
