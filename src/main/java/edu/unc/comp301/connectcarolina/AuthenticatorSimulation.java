@@ -28,17 +28,14 @@ public class AuthenticatorSimulation {
 
     Adept adept = new Adept();
     adept.validateScan("Leadership Summit", scannedEvents);
-
     List<Student> studentList = new ArrayList<>();
     studentList.add(s1);
-    //  Jedi jedi = new Jedi();
-    //      Jedi.initStudents(null);
     Jedi.initStudents(studentList);
-    //    System.out.println(Jedi.duoAuthenticate(s1, "Wednesday"));
-
     System.out.println("Thank you for visiting ConnectCarolina");
     if (Jedi.duoAuthenticate(s1, "Wednesday")) {
       System.out.println("You are authenticated for the next 10 minutes");
+      scannedEvents.add("Leadership Summit");
+      s1.setCLEEvents(scannedEvents);
     } else {
       System.out.println("You will have to authenticate again");
     }
