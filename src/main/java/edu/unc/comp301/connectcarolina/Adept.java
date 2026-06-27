@@ -34,7 +34,6 @@ public class Adept {
   }
 
   public void getCLECredits(String eventName, List<String> scannedEvents) {
-
     if (scannedEvents == null) throw new IllegalArgumentException("scanned events is null");
     try {
       validateScan(eventName, scannedEvents);

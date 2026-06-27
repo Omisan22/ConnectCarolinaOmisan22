@@ -13,7 +13,8 @@ public class Jedi {
 
   private static Map<String, Set<Student>> enrollment = new HashMap<>();
 
-  public static void initStudents(List<Student> studentsList) {
+  public static void initStudents(List<Student> studentsList) throws IllegalArgumentException {
+    //    public static void initStudents(List<Student> studentsList) {
     enrollment.put("Monday", null);
     enrollment.put("Tuesday", null);
     enrollment.put("Wednesday", null);

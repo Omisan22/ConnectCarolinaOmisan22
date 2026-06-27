@@ -19,10 +19,11 @@ public class AuthenticatorSimulation {
     studentList.add(s1);
     studentList.add(s2);
     // studentList.add(null);
-    Jedi.initStudents(studentList);
+    //    Jedi.initStudents(studentList);
+    Jedi.initStudents(null);
     System.out.println("Thank you for visiting ConnectCarolina");
-    //    if (Jedi.duoAuthenticate(s2, "Wednesday")) {
-    if (Jedi.duoAuthenticate(null, "Wednesday")) {
+    if (Jedi.duoAuthenticate(s2, "Wednesday")) {
+      // if (Jedi.duoAuthenticate(null, "Wednesday")) {
       System.out.println("true");
       System.out.println("Leadership Summit");
       System.out.println("You are authenticated for the next 10 minutes");
