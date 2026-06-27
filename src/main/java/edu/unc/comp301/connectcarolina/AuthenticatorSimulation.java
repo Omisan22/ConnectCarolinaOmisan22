@@ -1,6 +1,7 @@
 package edu.unc.comp301.connectcarolina;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AuthenticatorSimulation {
@@ -20,7 +21,9 @@ public class AuthenticatorSimulation {
     studentList.add(s2);
     // studentList.add(null);
     //    Jedi.initStudents(studentList);
-    Jedi.initStudents(null);
+    Jedi.initStudents(Collections.emptyList());
+    Jedi.duoAuthenticate(null, "Monday");
+    // Jedi.initStudents(null);
     System.out.println("Thank you for visiting ConnectCarolina");
     if (Jedi.duoAuthenticate(s2, "Wednesday")) {
       // if (Jedi.duoAuthenticate(null, "Wednesday")) {
