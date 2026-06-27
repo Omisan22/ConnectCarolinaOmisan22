@@ -20,20 +20,21 @@ public class AuthenticatorSimulation {
     studentList.add(s1);
     studentList.add(s2);
     // studentList.add(null);
-    //    Jedi.initStudents(studentList);
+    Jedi.initStudents(studentList);
     //    Jedi.initStudents(Collections.emptyList());
     //    Jedi.duoAuthenticate(null, "Monday");
     //  adept.getCLECredits("Leadership Summit", null);
     // Jedi.initStudents(null);
     System.out.println("Thank you for visiting ConnectCarolina");
-    if (Jedi.duoAuthenticate(s2, "Wednesday")) {
+    if (Jedi.duoAuthenticate(s1, "Wednesday")) {
+      //    if (Jedi.duoAuthenticate(s2, "Wednesday")) {
       // if (Jedi.duoAuthenticate(null, "Wednesday")) {
       System.out.println("true");
       System.out.println("Leadership Summit");
       System.out.println("You are authenticated for the next 10 minutes");
-      scannedEvents.add("Leadership Summit");
-      s1.setCLEEvents(scannedEvents);
-      adept.getCLECredits("Leadership Summit", s1.getScannedCLEEvents());
+      //      scannedEvents.add("Leadership Summit");
+      //      s1.setCLEEvents(scannedEvents);
+      //      adept.getCLECredits("Leadership Summit", s1.getScannedCLEEvents());
     } else {
       System.out.println("You will have to authenticate again");
     }
