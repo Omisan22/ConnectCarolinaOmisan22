@@ -21,8 +21,9 @@ public class AuthenticatorSimulation {
     studentList.add(s2);
     // studentList.add(null);
     //    Jedi.initStudents(studentList);
-    Jedi.initStudents(Collections.emptyList());
-    Jedi.duoAuthenticate(null, "Monday");
+    //    Jedi.initStudents(Collections.emptyList());
+    //    Jedi.duoAuthenticate(null, "Monday");
+    //  adept.getCLECredits("Leadership Summit", null);
     // Jedi.initStudents(null);
     System.out.println("Thank you for visiting ConnectCarolina");
     if (Jedi.duoAuthenticate(s2, "Wednesday")) {
