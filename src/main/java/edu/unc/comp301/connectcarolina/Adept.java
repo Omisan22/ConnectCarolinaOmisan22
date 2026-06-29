@@ -7,7 +7,8 @@ import java.util.Map;
 
 public class Adept {
   private Map<String, String> cleEvents = new HashMap<>();
-//  private List<String> scannedEvents = new ArrayList<>() {};
+
+  //  private List<String> scannedEvents = new ArrayList<>() {};
 
   public Adept() {
     initCalendar();
