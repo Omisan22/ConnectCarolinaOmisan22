@@ -3,6 +3,28 @@ package edu.unc.comp301.connectcarolina;
 import java.util.*;
 
 public class Jedi {
+  private static Map<String, Set<Student>> enrollment = new HashMap<>();
+
+  public static void initStudents(List<Student> studentsList) throws IllegalArgumentException {
+    //    public static void initStudents(List<Student> studentsList) {
+    enrollment.put("Monday", new HashSet<>());
+    enrollment.put("Tuesday", new HashSet<>());
+    enrollment.put("Wednesday", new HashSet<>());
+    enrollment.put("Thursday", new HashSet<>());
+    enrollment.put("Friday", new HashSet<>());
+    String day;
+    if (studentsList == null) throw new IllegalArgumentException("students list is null");
+    for (Student s : studentsList) {
+      if (s == null) throw new IllegalArgumentException("null student");
+      try {
+        day = calculateValidDay(s.getCredits());
+        enrollment.get(day).add(s);
+      } catch (IllegalArgumentException e) {
+        //        System.out.println("Student: credits weren’t valid");
+        System.out.println("Student: " + s.getName() + " credits weren’t valid");
+      }
+    }
+  }
 
   public static String calculateValidDay(double credits) throws IllegalArgumentException {
     if ((credits >= 0.0) && (credits <= 55.0)) return "Wednesday";
@@ -11,40 +33,11 @@ public class Jedi {
     else throw new IllegalArgumentException("Illegal argument");
   }
 
-  private static Map<String, Set<Student>> enrollment = new HashMap<>();
-
-  public static void initStudents(List<Student> studentsList) throws IllegalArgumentException {
-    //    public static void initStudents(List<Student> studentsList) {
-    enrollment.put("Monday", null);
-    enrollment.put("Tuesday", null);
-    enrollment.put("Wednesday", null);
-    enrollment.put("Thursday", null);
-    enrollment.put("Friday", null);
-    String day;
-    Set<Student> studentsSet;
-    if (studentsList == null) throw new IllegalArgumentException("students list is null");
-    for (Student s : studentsList) {
-      try {
-        if (s == null) throw new IllegalArgumentException("null student");
-        day = calculateValidDay(s.getCredits());
-        studentsSet = enrollment.get(day);
-        //        if (studentsSet == null) throw new IllegalArgumentException("null student set");
-        if (studentsSet == null) studentsSet = new HashSet<>();
-        studentsSet.add(s);
-        enrollment.put(day, studentsSet);
-      } catch (IllegalArgumentException e) {
-        System.out.println("Student: credits weren’t valid");
-        //        System.out.println("Student: " + s.getName() + " credits weren’t valid");
-      }
-    }
-  }
-
   public static boolean duoAuthenticate(Student student, String day)
       throws DuoAuthenticationFailedException {
     final int MINID = 100000000;
     final int MAXID = 999999999;
-    //    if (student == null) throw new DuoAuthenticationFailedException("student is null");
-    if (student != null) {
+    if (student == null) throw new DuoAuthenticationFailedException("student is null");
       int id = student.getStudentID();
       //    boolean returnValue = false;
       //    try {
@@ -66,6 +59,6 @@ public class Jedi {
       //      System.out.println(e.getMessage());
       //      return false;
       //    }
-    } else return false;
+//    } else return false;
   }
 }

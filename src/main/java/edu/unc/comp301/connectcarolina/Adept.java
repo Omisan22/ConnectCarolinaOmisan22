@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Adept {
   private Map<String, String> cleEvents = new HashMap<>();
-  private List<String> scannedEvents = new ArrayList<>() {};
+//  private List<String> scannedEvents = new ArrayList<>() {};
 
   public Adept() {
     initCalendar();
@@ -33,15 +33,17 @@ public class Adept {
     }
   }
 
-  public void getCLECredits(String eventName, List<String> scannedEvents) {
+  public List<String> getCLECredits(String eventName, List<String> scannedEvents) {
     if (scannedEvents == null) throw new IllegalArgumentException("scanned events is null");
     try {
       validateScan(eventName, scannedEvents);
+      scannedEvents.add(eventName);
+      System.out.println("Thank you for attending!");
     } catch (Exception e) {
       System.out.println("Error scanning event:" + e.getMessage());
+    } finally {
+      System.out.println("CLE credit processed for: " + eventName);
     }
-    System.out.println("Thank you for attending!");
-    scannedEvents.add(eventName);
-    System.out.println("CLE credit processed for: " + eventName);
+    return scannedEvents;
   }
 }

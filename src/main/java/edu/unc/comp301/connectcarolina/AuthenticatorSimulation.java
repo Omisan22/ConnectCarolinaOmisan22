@@ -12,10 +12,11 @@ public class AuthenticatorSimulation {
     Student s1 = new Student("John", 100000001, 2);
     Student s2 = new Student("Mary", 100000002, 3);
     //    Student s2 = new Student("John", 100000001, 0);
-    List<String> scannedEvents = new ArrayList<>();
+//    List<String> scannedEvents = new ArrayList<>();
 
     Adept adept = new Adept();
-    adept.validateScan("Leadership Summit", scannedEvents);
+//    adept.validateScan("Leadership Summit", s1.getScannedCLEEvents());
+    adept.getCLECredits("Leadership Summit", s1.getScannedCLEEvents());
     List<Student> studentList = new ArrayList<>();
     studentList.add(s1);
     studentList.add(s2);
