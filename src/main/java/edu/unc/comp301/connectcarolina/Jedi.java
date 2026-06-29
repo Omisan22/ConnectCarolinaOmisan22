@@ -37,7 +37,7 @@ public class Jedi {
       throws DuoAuthenticationFailedException {
     final int MINID = 100000000;
     final int MAXID = 999999999;
-    if (student == null) throw new DuoAuthenticationFailedException("student is null");
+    if (student == null) throw new IllegalArgumentException("student is null");
     int id = student.getStudentID();
     if ((id < MINID) || (id > MAXID))
       throw new DuoAuthenticationFailedException("invalid student id for student: ");
