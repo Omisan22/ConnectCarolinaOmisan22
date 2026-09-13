@@ -21,26 +21,6 @@ public class Novice {
     GRADE_MAP.put("F", 0.0);
   }
 
-  public static String calculateGPA(int numOfClasses, String[] grades) {
-    if (grades == null) throw new IllegalArgumentException("grades is null");
-    if (numOfClasses <= 0) {
-      throw new IllegalArgumentException("Number of classes is 0 (negative response)");
-    }
-    if (grades.length != numOfClasses) {
-      throw new IllegalArgumentException(
-          "number of elements in the grades mismatches the number of classes");
-    }
-    double cgpa = 0.0;
-    double grade;
-    for (int i = 0; i < grades.length; i++) {
-      grade = charToGrade(grades[i]);
-      if (grade < 0) throw new IllegalArgumentException("invalid grade");
-      cgpa += grade;
-    }
-    cgpa = cgpa / numOfClasses;
-    return ("Your calculated GPA is: " + cgpa);
-  }
-
   public static double charToGrade(String grade) {
     if (grade == null) {
       return -1; // handle null input gracefully
