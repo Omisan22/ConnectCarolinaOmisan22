@@ -28,4 +28,32 @@ public class Novice {
     Double value = GRADE_MAP.get(grade.toUpperCase());
     return (value == null) ? -1 : value;
   }
+
+  public static String calculateGPA(int numClasses, String[] grades) {
+    // Number of classes must be positive
+    if (numClasses <= 0) {
+      throw new IllegalArgumentException("Number of classes must be positive.");
+    }
+
+    // Grades array must match the number of classes
+    if (grades == null || grades.length != numClasses) {
+      throw new IllegalArgumentException(
+              "Number of grades must match the number of classes.");
+    }
+
+    double sum = 0.0;
+    for (String grade : grades) {
+      double points = charToGrade(grade);
+
+      // charToGrade returns -1 for an invalid grade
+      if (points == -1) {
+        throw new IllegalArgumentException("Invalid grade: " + grade);
+      }
+
+      sum += points;
+    }
+
+    double gpa = sum / numClasses;
+    return "Your calculated GPA is: " + gpa;
+  }
 }
