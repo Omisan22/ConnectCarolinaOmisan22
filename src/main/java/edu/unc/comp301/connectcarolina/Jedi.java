@@ -53,10 +53,10 @@ public class Jedi {
     boolean authenticated = false;
 
     if (student == null) {
-      throw new DuoAuthenticationFailedException("Student cannot be null.");
+      throw new IllegalArgumentException("Student cannot be null.");
     }
     if (day == null) {
-      throw new DuoAuthenticationFailedException("Day cannot be null.");
+      throw new IllegalArgumentException("Day cannot be null.");
     }
 
     int studentID = student.getStudentID();
