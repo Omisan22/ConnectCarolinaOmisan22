@@ -30,15 +30,13 @@ public class Novice {
   }
 
   public static String calculateGPA(int numClasses, String[] grades) {
-    // Number of classes must be positive
     if (numClasses <= 0) {
-      throw new IllegalArgumentException("Number of classes must be positive.");
+      throw new IllegalArgumentException("Number of classes cannot be negative or zero.");
     }
 
     // Grades array must match the number of classes
     if (grades == null || grades.length != numClasses) {
-      throw new IllegalArgumentException(
-              "Number of grades must match the number of classes.");
+      throw new IllegalArgumentException("Number of grades must match the number of classes.");
     }
 
     double sum = 0.0;
